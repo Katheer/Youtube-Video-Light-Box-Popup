@@ -1,0 +1,41 @@
+/// Variables for main nav elements _____________
+$videoBlockElement : '.video-block';
+
+
+/// Variables for target break points,
+// coloumn counts,
+/// gutter width of video block and margin of video block_____________
+
+$largerDesktop : 1200px;
+$normalDesktop : 992px;
+$iPadAndTabviews: 768px;
+$mobileLandscapeViews: 550px;
+$mobilePortraitViews: 320px;
+
+$largerDesktopColoumnCount : 4;
+$normalDesktopColoumnCount : 3;
+$iPadAndTabviewsColoumnCount: 2;
+$mobileLandscapeViewsColoumnCount: 2;
+$mobilePortraitViewsColoumnCount: 1;
+
+$largerDesktopVBlockMargin : 0 0 30px;
+$normalDesktopVBlockMargin : 0 0 20px;
+$iPadAndTabviewsVBlockMargin: 0 0 20px;
+$mobileLandscapeViewsVBlockMargin: 0 0 20px;
+$mobilePortraitViewsVBlockMargin: 0 0 20px;
+
+$largerDesktopVBlockGutter : 15px;
+$normalDesktopVBlockGutter : 10px;
+$iPadAndTabviewsVBlockGutter: 10px;
+$mobileLandscapeViewsVBlockGutter: 7.5px;
+$mobilePortraitViewsVBlockGutter: 10px;
+
+
+/// Pre loader _____________
+$PreLoaderSize: 40px;
+$PreLoaderPath: '../images/loading.gif';
+
+/// Video block variables _____________
+
+$VblockBgColor : #fff;
+$VblockBorderRadius: 3px;

@@ -1,0 +1,141 @@
+#{$videoBlockElement}{
+	float: left;
+	img {
+		max-width: 100%;	
+	}
+	.l-video {
+		position: relative;
+		overflow: hidden;
+		background-color: $VblockBgColor;
+		background-size: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		@include border-radius($VblockBorderRadius);
+		@include transition(0.4s , ease, all);
+		cursor: pointer;
+		> img {
+			visibility: hidden;
+		}
+		&[data-loader="active"]{
+			background-size: $PreLoaderSize;
+			background-image: url($PreLoaderPath) !important;
+		}
+	}
+}
+
+@media(min-width: $largerDesktop){
+	#{$videoBlockElement}{
+		width: 100%/$largerDesktopColoumnCount;
+		@include element-margin-padding( $largerDesktopVBlockMargin, 0 $largerDesktopVBlockGutter);
+	}
+}
+
+@media(min-width: $normalDesktop ) and (max-width: $largerDesktop - 1 ){
+	#{$videoBlockElement}{
+		width: 100%/$normalDesktopColoumnCount;
+		@include element-margin-padding( $normalDesktopVBlockMargin, 0 $normalDesktopVBlockGutter);
+	}		
+}
+
+@media(min-width: $iPadAndTabviews ) and (max-width: $normalDesktop - 1 ){
+	#{$videoBlockElement}{
+		width: 100%/$iPadAndTabviewsColoumnCount;
+		@include element-margin-padding( $iPadAndTabviewsVBlockMargin, 0 $iPadAndTabviewsVBlockGutter);
+	}		 
+}
+
+@media(min-width: $mobileLandscapeViews ) and (max-width: $iPadAndTabviews - 1 ){
+	#{$videoBlockElement}{
+		width: 100%/$mobileLandscapeViewsColoumnCount;
+		@include element-margin-padding( $mobileLandscapeViewsVBlockMargin, 0 $mobileLandscapeViewsVBlockGutter);
+	}		
+}
+
+@media(max-width: $mobileLandscapeViews - 1 ){
+	#{$videoBlockElement}{
+		width: 100%/$mobilePortraitViewsColoumnCount;
+		@include element-margin-padding( $mobilePortraitViewsVBlockMargin, 0 $mobilePortraitViewsVBlockGutter);
+	}		
+}
+
+
+/// Play icon______________________
+
+#{$videoBlockElement}{
+	.play-icon {
+		width: 40px;
+		height: 40px;
+		@include border-radius(40px);
+		@include div-align-center();
+		background-color: #1c8ad8;
+		background-image: url(../images/play-icon.png);
+		background-size: 15px;
+		background-position: 15px 10.5px;
+		background-repeat: no-repeat;
+		@include box-shadow(none);
+		@include transition(0.2s , ease, all);
+		&:hover {
+	    	background-size: 10px;
+    		background-position: 17px 13.5px;
+			@include box-shadow( inset 5px 5px 5px 5px #2b85c5);
+		}
+	}
+}
+
+// Hide play icon______________________
+
+#{$videoBlockElement}{
+	[data-loader="active"] {
+		.play-icon {
+			top: -50px;
+			bottom: auto;
+		}
+	}
+}
+
+// Video block mouse hover______________________
+
+#{$videoBlockElement}{
+	.l-video {
+		&:hover {
+			background-size: 110%;
+			cursor: pointer;
+			.play-icon {
+				background-size: 10px;
+	    		background-position: 17px 13.5px;
+				@include box-shadow( inset 5px 5px 5px 5px #2b85c5);
+			}
+		}
+	}
+}
+
+// Video popup______________________
+#{$videoBlockElement}{
+	.l-video-popup {
+		@include div-align-center();
+		height: 0;
+		width: 0;
+		overflow: hidden;
+		opacity: 0; 
+	}
+}
+
+// Activate video popup ______________________
+#{$videoBlockElement}{
+	.v-popup-active {
+		.l-video-popup {
+			top: 0;
+			bottom:0;
+			left: 0;
+			right: 0;
+			position: fixed;
+			height: 100%;
+			width: 100%;
+   		 	background-color: rgba(28, 138, 216, 0.52)
+			overflow: hidden;
+			opacity: 1; 
+			z-index: 99999;
+		}	
+	}
+	
+}

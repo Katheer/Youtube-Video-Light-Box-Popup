@@ -1,0 +1,20 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+  'abstracts/mixins',
+  'abstracts/popup-variables';
+
+// 2. Base stuff
+@import
+  'base/base',
+  'base/fonts';
+
+// 3. Layout-related sections
+@import
+  'layout/content';
+
+// 4. Components
+@import
+  'components/vidoe-blocks';
+  
