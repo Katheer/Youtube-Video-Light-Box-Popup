@@ -19,6 +19,9 @@
 		&[data-loader="active"]{
 			background-size: $PreLoaderSize;
 			background-image: url($PreLoaderPath) !important;
+			&:hover {
+				background-size: $PreLoaderSize !important;
+			}
 		}
 	}
 }
@@ -106,6 +109,18 @@
 				@include box-shadow( inset 5px 5px 5px 5px #2b85c5);
 			}
 		}
+
+		&.v-popup-active {
+			&:hover {
+				background-size: 100%;
+				cursor: default;
+				.play-icon {
+					background-size: 15px;
+					background-position: 15px 10.5px;
+					@include box-shadow(none);
+				}
+			}			
+		}
 	}
 }
 
@@ -117,8 +132,50 @@
 		width: 0;
 		overflow: hidden;
 		opacity: 0; 
+
+		.popup-container {
+			width: 100%;
+		    max-width: 600px;
+		    height: 360px;
+		    position: relative;
+		    margin: 100px auto;
+		    padding: 10px;
+		    background-color: #fff;
+		    border: none;
+		    @include border-radius(4px);
+		    @include box-shadow(none);
+			@include transition(0.2s , ease, all);
+		}
 	}
 }
+
+// Close Icon______________________
+#{$videoBlockElement}{
+	.close-icon {
+		width: 40px;
+		height: 40px;
+		top: -15px;
+		right: -15px;
+		position: absolute;
+		@include border-radius(40px);
+		border: 8px solid #fff;
+		background-color: #1c8ad8;
+		background-image: url(../images/close-icon.png);
+		background-size: 13px;
+		background-position: center;
+		background-repeat: no-repeat;
+		@include box-shadow(none);
+		@include transition(0.2s , ease, all);
+		cursor: pointer;
+		&:hover {
+	    	background-size: 13px;
+    		background-position: center;
+			@include box-shadow(none);
+			border: 4px solid #fff;
+		}
+	}
+}
+
 
 // Activate video popup ______________________
 #{$videoBlockElement}{
@@ -131,11 +188,10 @@
 			position: fixed;
 			height: 100%;
 			width: 100%;
-   		 	background-color: rgba(28, 138, 216, 0.52)
+   		 	background-color: rgba(28, 138, 216, 0.52);
 			overflow: hidden;
 			opacity: 1; 
 			z-index: 99999;
 		}	
-	}
-	
+	}	
 }

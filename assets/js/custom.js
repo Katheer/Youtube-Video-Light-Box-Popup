@@ -8,6 +8,8 @@ $(document).ready(function() {
     var htmlVideo = '<div class="l-video-popup">' +
                         '<div class="popup-container">' +
                                 '<div class="close-icon"></div>' +
+                                '<iframe src="https://www.youtube.com/embed/C0DPdy98e4c">' +
+                                '</iframe>' +
                         '</div>' +
                      '</div>';
 
